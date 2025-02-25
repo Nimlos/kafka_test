@@ -1,8 +1,9 @@
-package dk.nimlos.b.kafkasetup;
+package dk.nimlos.common.kafkasetup;
 
 import java.util.HashMap;
 import java.util.Map;
 import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.common.serialization.ByteArraySerializer;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -12,13 +13,13 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 
 @Configuration
-public class KafkaProducerConfig {
+public class KafkaByteConfig {
 
 	@Value(value = "${spring.kafka.bootstrap-servers}")
 	private String bootstrapAddress;
 
 	@Bean
-	public ProducerFactory<String, String> producerFactory() {
+	public ProducerFactory<String, byte[]> byteArrayProducerFactory() {
 		Map<String, Object> configProps = new HashMap<>();
 		configProps.put(
 				ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,
@@ -28,12 +29,14 @@ public class KafkaProducerConfig {
 				StringSerializer.class);
 		configProps.put(
 				ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
-				StringSerializer.class);
+				ByteArraySerializer.class);
 		return new DefaultKafkaProducerFactory<>(configProps);
 	}
 
+
 	@Bean
-	public KafkaTemplate<String, String> kafkaTemplate() {
-		return new KafkaTemplate<>(producerFactory());
+	public KafkaTemplate<String, byte[]> kafkaByteArrayTemplate() {
+		return new KafkaTemplate<>(byteArrayProducerFactory());
 	}
+
 }

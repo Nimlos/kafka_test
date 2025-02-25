@@ -1,4 +1,4 @@
-package dk.nimlos.a.kafkasetup;
+package dk.nimlos.common.kafkasetup;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,7 +23,17 @@ public class KafkaTopicConfig {
     }
     
     @Bean
-    public NewTopic topic1() {
-        return new NewTopic("baeldung", 1, (short) 1);
+    public NewTopic moduleATopic() {
+        return new NewTopic("moduleA", 1, (short) 1);
+    }
+
+    @Bean
+    public NewTopic moduleBTopic() {
+        return new NewTopic("moduleB", 1, (short) 1);
+    }
+
+    @Bean
+    public NewTopic byteTopic() {
+        return new NewTopic("profibus", 1, (short) 1);
     }
 }

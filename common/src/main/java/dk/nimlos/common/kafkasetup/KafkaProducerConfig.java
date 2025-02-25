@@ -1,4 +1,4 @@
-package dk.nimlos.a.kafkasetup;
+package dk.nimlos.common.kafkasetup;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,2 +1,2 @@
 rootProject.name = "kafka_test"
-include("module-a", "module-b")
+include("module-a", "module-b", "common")

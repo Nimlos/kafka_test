@@ -3,7 +3,7 @@
 dependencies {
     // This module is a web module, so we include Spring Boot's Web starter
     implementation("org.springframework.boot:spring-boot-starter-web")
-    
+    implementation(project(":common"))
     // Other module-specific dependencies can be added here
 }
 
