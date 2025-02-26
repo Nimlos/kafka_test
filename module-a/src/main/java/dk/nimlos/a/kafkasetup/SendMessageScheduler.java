@@ -17,17 +17,13 @@ public class SendMessageScheduler {
 	private final KafkaTemplate<String, String> kafkaTemplate;
 	private final StatisticsHandler statisticsHandler;
 
-	@Scheduled(fixedDelay = 200)
+	//@Scheduled(fixedDelay = 200)
 	public void sendMessage() {
 		String msg = UUID.randomUUID().toString();
 		StopWatch.startStopWatch(msg);
 		kafkaTemplate.send("moduleB", msg);
 	}
 
-	@KafkaListener(topics = "moduleA", groupId = "foo")
-	public void listenGroupFoo(String message) {
-		long milli = StopWatch.stopStopWatch(message);
-		statisticsHandler.addData(milli);
-	}
+
 
 }

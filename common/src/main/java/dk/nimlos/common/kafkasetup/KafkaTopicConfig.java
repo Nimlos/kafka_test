@@ -31,7 +31,11 @@ public class KafkaTopicConfig {
     public NewTopic moduleBTopic() {
         return new NewTopic("moduleB", 1, (short) 1);
     }
+    @Bean
 
+    public NewTopic communicationModuleTopic() {
+        return new NewTopic("communicationModule", 1, (short) 1);
+    }
     @Bean
     public NewTopic byteTopic() {
         return new NewTopic("profibus", 1, (short) 1);

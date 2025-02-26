@@ -13,7 +13,7 @@ public class Listener {
 
 	@KafkaListener(topics = "moduleB", groupId = "foo")
 	public void listenGroupFoo(String message) {
-		kafkaTemplate.send("moduleA", message);
+		kafkaTemplate.send("moduleA", "response");
 	}
 
 }
