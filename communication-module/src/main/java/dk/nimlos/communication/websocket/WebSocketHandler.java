@@ -1,18 +1,16 @@
 package dk.nimlos.communication.websocket;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dk.nimlos.communication.websocket.request.Coordinates;
-import dk.nimlos.communication.websocket.response.Circle;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 
 @Service
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 public class WebSocketHandler extends TextWebSocketHandler {
 
 	private final ObjectMapper objectMapper = new ObjectMapper();

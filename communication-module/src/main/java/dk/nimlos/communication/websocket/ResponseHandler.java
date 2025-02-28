@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import dk.nimlos.communication.websocket.response.Circle;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
@@ -21,22 +23,33 @@ public class ResponseHandler {
 	private double minCircleRadius = 15.0;
 	private double circleRadiusIncrease = 0.5;
 
+	@Autowired
+	private SimpMessagingTemplate messagingTemplate;
+
+
 	public void sendResponse() {
-		try {
-			Circle circle = new Circle();
-			circle.setRadius(getCircleRadius());
-
-			// Serialize Circle object back to JSON
-			String responseJson = objectMapper.writeValueAsString(circle);
-
-			// Send response back to the client
-			session.sendMessage(new TextMessage(responseJson));
-		} catch (Exception e) {
-			log.error("Could not send response", e);
-		}
-		// Prepare a Circle response (e.g., fixed radius 5)
+		Circle circle = new Circle();
+		circle.setRadius(getCircleRadius());
+		messagingTemplate.convertAndSend("/topic/circle", circle);
 
 	}
+
+//	public void sendResponse() {
+//		try {
+//			Circle circle = new Circle();
+//			circle.setRadius(getCircleRadius());
+//
+//			// Serialize Circle object back to JSON
+//			String responseJson = objectMapper.writeValueAsString(circle);
+//
+//			// Send response back to the client
+//			session.sendMessage(new TextMessage(responseJson));
+//		} catch (Exception e) {
+//			log.error("Could not send response", e);
+//		}
+//		// Prepare a Circle response (e.g., fixed radius 5)
+//
+//	}
 
 	private double getCircleRadius() {
 		if (increase) {

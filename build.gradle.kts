@@ -26,6 +26,8 @@ subprojects {
         add("annotationProcessor", "org.projectlombok:lombok:1.18.28")
         add("testImplementation", "org.springframework.boot:spring-boot-starter-test")
         add("implementation", "org.springframework.kafka:spring-kafka:3.3.3")
+        add("implementation", "org.apache.ignite:ignite-spring:2.17.0")
+        add("implementation", "org.reflections:reflections:0.10.2")
 
     }
 
