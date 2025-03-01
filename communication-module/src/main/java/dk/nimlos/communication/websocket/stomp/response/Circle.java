@@ -1,4 +1,4 @@
-package dk.nimlos.communication.websocket.response;
+package dk.nimlos.communication.websocket.stomp.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

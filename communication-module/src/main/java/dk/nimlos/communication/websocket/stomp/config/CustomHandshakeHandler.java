@@ -1,4 +1,4 @@
-package dk.nimlos.communication.websocket.config;
+package dk.nimlos.communication.websocket.stomp.config;
 
 import java.security.Principal;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package dk.nimlos.communication.websocket.config;
+package dk.nimlos.communication.websocket.jackson;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.jsontype.NamedType;

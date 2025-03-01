@@ -1,13 +1,12 @@
 package dk.nimlos.communication.websocket;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dk.nimlos.communication.websocket.response.Circle;
+import dk.nimlos.communication.websocket.stomp.response.Circle;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
-import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 
 @Service

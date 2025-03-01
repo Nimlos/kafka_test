@@ -1,4 +1,4 @@
-package dk.nimlos.communication.websocket.config;
+package dk.nimlos.communication.websocket.stomp.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;

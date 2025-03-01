@@ -1,12 +1,10 @@
-package dk.nimlos.communication.websocket.controllers;
+package dk.nimlos.communication.websocket.stomp.controllers;
 
-import dk.nimlos.communication.websocket.request.Coordinates;
-import dk.nimlos.communication.websocket.response.Circle;
+import dk.nimlos.communication.websocket.stomp.request.Coordinates;
 import java.security.Principal;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 
 @Controller

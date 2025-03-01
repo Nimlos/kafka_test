@@ -1,11 +1,12 @@
-package dk.nimlos.communication.websocket;
+package dk.nimlos.communication.websocket.defaultwebsocket;
 
+import dk.nimlos.communication.websocket.ResponseHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dk.nimlos.communication.websocket.request.Coordinates;
+import dk.nimlos.communication.websocket.stomp.request.Coordinates;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 

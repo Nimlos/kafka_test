@@ -1,7 +1,7 @@
 package dk.nimlos.communication.websocket.config;
 
-import dk.nimlos.communication.websocket.WebSocketHandler;
-import dk.nimlos.communication.websocket.WebSocketHandlerJacksonTest;
+import dk.nimlos.communication.websocket.defaultwebsocket.WebSocketHandler;
+import dk.nimlos.communication.websocket.jackson.WebSocketHandlerJacksonTest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
