@@ -28,6 +28,8 @@ subprojects {
         add("implementation", "org.springframework.kafka:spring-kafka:3.3.3")
         add("implementation", "org.apache.ignite:ignite-spring:2.17.0")
         add("implementation", "org.reflections:reflections:0.10.2")
+        add("implementation", "com.google.protobuf:protobuf-java:4.29.3")
+        add("implementation", "com.google.protobuf:protobuf-java-util:4.29.3")
 
     }
 

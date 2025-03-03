@@ -34,7 +34,7 @@ public class WebSocketHandlerJacksonTest extends TextWebSocketHandler {
 
 		try {
 			FrontEndMessage frontEndMessage = objectMapper.readValue(message.getPayload(), FrontEndMessage.class);
-
+			System.out.println(frontEndMessage.getMessageData().getClass().getSimpleName());
 		} catch (Exception e) {
 			sendWrongFormatMessage(session);
 		}

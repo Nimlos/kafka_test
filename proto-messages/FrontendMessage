@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_package = "dk.nimlos.common.protomessages";
+
+message FrontEndMessage {
+  string messageName = 1;
+  Payload payload = 2;
+}
+
+message Payload {
+  oneof messageData {
+    TestMessageA testMessageA = 1;
+    TestMessageB testMessageB = 2;
+  }
+}
+
+message TestMessageA {
+  string data = 1;
+}
+
+message TestMessageB {
+  int32 number = 1;
+}
